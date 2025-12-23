@@ -1,0 +1,24 @@
+if SHIELD_NaZZ_L
+
+config ZMK_KEYBOARD_NAME
+    default "NaZZ"
+
+config ZMK_USB
+	  default y
+
+config ZMK_BLE
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_NaZZ_L || SHIELD_NaZZ_R
+config NFCT_PINS_AS_GPIOS
+    default y
+
+config ZMK_SPLIT
+    default y
+
+endif
