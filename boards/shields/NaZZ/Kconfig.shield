@@ -1,0 +1,6 @@
+config SHIELD_NaZZ_L
+    def_bool $(shields_list_contains,NaZZ_L)
+
+config SHIELD_NaZZ_R
+    def_bool $(shields_list_contains,NaZZ_R)
+
