@@ -1,0 +1,4 @@
+name: <zmk-keyboard-NaZZ>
+build:
+  settings:
+    board_root: .
