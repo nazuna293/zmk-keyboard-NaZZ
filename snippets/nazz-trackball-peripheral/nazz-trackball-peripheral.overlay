@@ -1,0 +1,15 @@
+// トラボ構成・peripheral側（右手）（ジャンパ: D5-SCLK / D8-MOT / D9-NCS）
+// Row4は使わない（D9がNCSになる）
+
+&spi0 {
+    status = "okay";
+};
+
+&trackball {
+    status = "okay";
+};
+
+&trackball_split {
+    status = "okay";
+    device = <&trackball>;
+};

@@ -1,52 +1,7 @@
 #include "NaZZ.dtsi"
-#include <input/processors.dtsi>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
-
-&default_transform {
-    col-offset = <5>;
-};
-
-// トラボ構成: D5=SCLK D4=SDIO D9=NCS D8=MOT（D5/D8/D9をトラボ側にブリッジ）
-&pinctrl {
-    spi0_default: spi0_default {    //通常時(SPI通信中)のピン構成
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>, //P0.05を指定(SCLK)
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,    //P0.04を指定(SDIOだからMOSI,MISO両方の役割を担う)
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
-        };
-    };
-
-    spi0_sleep: spi0_sleep {    //スリープ時のピン構成(省電力)
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            low-power-enable;
-        };
-    };
-};
-
-
-&spi0 {
-    status = "okay";
-    compatible = "nordic,nrf-spim"; //マイコンがnRFシリーズ
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&xiao_d 9 GPIO_ACTIVE_LOW>;  //D9(NCS)
-
-    trackball: trackball@0 {
-        status = "okay";
-        compatible = "pixart,paw3222";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //D8(MOT)
-        res-cpi = <800>;
-    };
-};
-
-// peripheralのセンサーをcentralへ中継する
-&trackball_split {
-    device = <&trackball>;
-};
+// 右手は列5〜9
+&transform_enc_enc { col-offset = <5>; };
+&transform_enc_tb  { col-offset = <5>; };
+&transform_tb_enc  { col-offset = <5>; };
+&transform_tb_tb   { col-offset = <5>; };

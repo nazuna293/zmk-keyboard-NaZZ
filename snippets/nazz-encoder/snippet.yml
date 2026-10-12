@@ -1,0 +1,4 @@
+name: nazz-encoder
+append:
+  EXTRA_DTC_OVERLAY_FILE: nazz-encoder.overlay
+  EXTRA_CONF_FILE: nazz-encoder.conf

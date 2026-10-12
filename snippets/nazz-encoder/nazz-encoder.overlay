@@ -1,0 +1,16 @@
+// エンコーダ構成（ジャンパ: D5-RE_A / D8-RE_B / D9-Row4）
+// Row4を読む → 下段SW21-23（将来のDパッドもRow4）
+
+&kscan0 {
+    row-gpios
+        = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row0
+        , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row1
+        , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row2 (NFC2)
+        , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row3 (NFC1)
+        , <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Row4
+        ;
+};
+
+&encoder {
+    status = "okay";
+};

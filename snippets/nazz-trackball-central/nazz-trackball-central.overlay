@@ -1,0 +1,14 @@
+// トラボ構成・central側（左手）（ジャンパ: D5-SCLK / D8-MOT / D9-NCS）
+// Row4は使わない（D9がNCSになる）
+
+&spi0 {
+    status = "okay";
+};
+
+&trackball {
+    status = "okay";
+};
+
+&trackball_central_listener {
+    status = "okay";
+};

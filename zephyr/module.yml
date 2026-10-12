@@ -1,4 +1,5 @@
-name: <zmk-keyboard-NaZZ>
+name: zmk-keyboard-NaZZ
 build:
   settings:
     board_root: .
+    snippet_root: .
