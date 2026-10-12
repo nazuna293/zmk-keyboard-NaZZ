@@ -64,11 +64,11 @@
     };
 
     // 右手トラボを左手で受ける listener
+    // 向きの補正・ジェスチャー・オートマウスなどの input-processors はキーマップ側で設定する
     trackball_peripheral_listener: trackball_peripheral_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_split>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;  // 実機で向きを確認
     };
 
     // 左手トラボ（central に直結）の listener
@@ -76,7 +76,6 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;  // 実機で向きを確認
     };
 };
 
