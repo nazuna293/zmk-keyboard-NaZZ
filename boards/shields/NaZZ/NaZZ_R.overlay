@@ -48,15 +48,11 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,paw32xx";  //PAW3222(Zephyr標準ドライバ)
+        compatible = "pixart,paw3222";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
-        res-cpi = <800>;  //608〜4826(38刻み)
-        //invert-x;
-        //invert-y;
-        zephyr,axis-x = <INPUT_REL_X>;
-        zephyr,axis-y = <INPUT_REL_Y>;
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
+        res-cpi = <800>;
     };
 };
 
