@@ -85,10 +85,21 @@
                 ;
     };
 
-    //right hand trackball
-    trackball_central_listener: trackball_central_listener {
+    //right hand trackball (PAW3222はperipheral(R)側。centralのLでlistenerを有効化する)
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
+        device = <&trackball_split>;
         input-processors = 
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;         //Y軸反転
             //<&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え

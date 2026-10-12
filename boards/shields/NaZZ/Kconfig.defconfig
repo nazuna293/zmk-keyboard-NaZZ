@@ -21,4 +21,7 @@ config NFCT_PINS_AS_GPIOS
 config ZMK_SPLIT
     default y
 
+config ZMK_POINTING
+    default y
+
 endif
