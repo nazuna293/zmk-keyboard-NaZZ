@@ -4,20 +4,10 @@
 
 
 &default_transform {
-    col-offset = <6>;
+    col-offset = <5>;
 };
 
-&kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
-};
-
-
+// トラボ構成: D5=SCLK D4=SDIO D9=NCS D8=MOT（D5/D8/D9をトラボ側にブリッジ）
 &pinctrl {
     spi0_default: spi0_default {    //通常時(SPI通信中)のピン構成
         group1 {
@@ -44,14 +34,14 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  //P0.09を指定(CS)
+    cs-gpios = <&xiao_d 9 GPIO_ACTIVE_LOW>;  //D9(NCS)
 
     trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,paw3222";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
+        irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //D8(MOT)
         res-cpi = <800>;
     };
 };
