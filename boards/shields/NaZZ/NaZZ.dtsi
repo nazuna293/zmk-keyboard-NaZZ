@@ -48,7 +48,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&encoder>;
-        triggers-per-rotation = <10>;
+        triggers-per-rotation = <6>;  // Enigma_01_Proと同じ
     };
 
     // 右手（peripheral）のトラボを左手（central）へ中継する
