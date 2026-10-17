@@ -1,0 +1,4 @@
+name: nazz-layout-lefty
+append:
+  EXTRA_DTC_OVERLAY_FILE: nazz-layout-lefty.overlay
+  EXTRA_CONF_FILE: nazz-layout-lefty.conf

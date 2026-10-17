@@ -1,0 +1,4 @@
+name: nazz-layout-twin
+append:
+  EXTRA_DTC_OVERLAY_FILE: nazz-layout-twin.overlay
+  EXTRA_CONF_FILE: nazz-layout-twin.conf

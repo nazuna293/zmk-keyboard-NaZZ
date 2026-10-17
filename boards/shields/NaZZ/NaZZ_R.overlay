@@ -2,6 +2,6 @@
 
 // 右手は列5〜9
 &transform_full   { col-offset = <5>; };
-&transform_tb_r   { col-offset = <5>; };
-&transform_tb_l   { col-offset = <5>; };
-&transform_tb_lr  { col-offset = <5>; };
+&transform_default   { col-offset = <5>; };
+&transform_lefty   { col-offset = <5>; };
+&transform_twin  { col-offset = <5>; };

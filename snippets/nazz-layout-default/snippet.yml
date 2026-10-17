@@ -1,0 +1,4 @@
+name: nazz-layout-default
+append:
+  EXTRA_DTC_OVERLAY_FILE: nazz-layout-default.overlay
+  EXTRA_CONF_FILE: nazz-layout-default.conf

@@ -1,8 +1,8 @@
-// 構成 tb-lr（左右とも同じ snippet を指定する）
+// 構成 default（左右とも同じ snippet を指定する）
 
 / {
     chosen {
-        zmk,physical-layout = &layout_tb_lr;
+        zmk,physical-layout = &layout_default;
     };
 };
 

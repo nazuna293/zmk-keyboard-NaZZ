@@ -15,7 +15,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &layout_tb_r;  // 既定。nazz-layout-* snippet で上書き
+        zmk,physical-layout = &layout_default;  // 既定。nazz-layout-* snippet で上書き
     };
 
     kscan0: kscan {

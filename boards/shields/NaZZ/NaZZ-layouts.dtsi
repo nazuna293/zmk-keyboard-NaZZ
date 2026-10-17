@@ -1,5 +1,5 @@
 // NaZZ 物理配置（モジュール構成ごと）。この並びがキーマップのキー番号になる
-//   tb_r: 左エンコーダ+右トラボ / tb_l: 左トラボ+右エンコーダ / tb_lr: 両手トラボ
+//   default: 右手トラボ（標準） / lefty: 左手トラボ / twin: 両手トラボ
 //   full: 両手エンコーダ（キーが最も多いので position map の基準に使う）
 // 生成元: 基板 NaZZ.kicad_pcb のスイッチ配置（SW番号は右手を表から見たもの）、位置と回転は config/NaZZ.json（右手は鏡写し）
 
@@ -8,7 +8,7 @@
 / {
     layout_full: layout_full {
         compatible = "zmk,physical-layout";
-        display-name = "full";
+        display-name = "Full";
         transform = <&transform_full>;
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>  // L SW5
@@ -60,10 +60,10 @@
             ;
     };
 
-    layout_tb_r: layout_tb_r {
+    layout_default: layout_default {
         compatible = "zmk,physical-layout";
-        display-name = "tb-r";
-        transform = <&transform_tb_r>;
+        display-name = "Standard";
+        transform = <&transform_default>;
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>  // L SW5
             , <&key_physical_attrs 100 100  100    0       0     0     0>  // L SW4
@@ -111,10 +111,10 @@
             ;
     };
 
-    layout_tb_l: layout_tb_l {
+    layout_lefty: layout_lefty {
         compatible = "zmk,physical-layout";
-        display-name = "tb-l";
-        transform = <&transform_tb_l>;
+        display-name = "Lefty";
+        transform = <&transform_lefty>;
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>  // L SW5
             , <&key_physical_attrs 100 100  100    0       0     0     0>  // L SW4
@@ -162,10 +162,10 @@
             ;
     };
 
-    layout_tb_lr: layout_tb_lr {
+    layout_twin: layout_twin {
         compatible = "zmk,physical-layout";
-        display-name = "tb-lr";
-        transform = <&transform_tb_lr>;
+        display-name = "Twin";
+        transform = <&transform_twin>;
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>  // L SW5
             , <&key_physical_attrs 100 100  100    0       0     0     0>  // L SW4
@@ -222,7 +222,7 @@
         >;
     };
 
-    transform_tb_r: transform_tb_r {
+    transform_default: transform_default {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <5>;
@@ -234,7 +234,7 @@
         >;
     };
 
-    transform_tb_l: transform_tb_l {
+    transform_lefty: transform_lefty {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <5>;
@@ -246,7 +246,7 @@
         >;
     };
 
-    transform_tb_lr: transform_tb_lr {
+    transform_twin: transform_twin {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <5>;
@@ -267,16 +267,16 @@
             physical-layout = <&layout_full>;
             positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45>;
         };
-        map_tb_r {
-            physical-layout = <&layout_tb_r>;
+        map_default {
+            physical-layout = <&layout_default>;
             positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 45 44 43 42>;
         };
-        map_tb_l {
-            physical-layout = <&layout_tb_l>;
+        map_lefty {
+            physical-layout = <&layout_lefty>;
             positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 45 44 43 35 36 37 38 39 40 41 42>;
         };
-        map_tb_lr {
-            physical-layout = <&layout_tb_lr>;
+        map_twin {
+            physical-layout = <&layout_twin>;
             positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 45 44 43 35 36 37 38 42 41 40 39>;
         };
     };
