@@ -1,0 +1,4 @@
+name: nazz-layout-tb-r
+append:
+  EXTRA_DTC_OVERLAY_FILE: nazz-layout-tb-r.overlay
+  EXTRA_CONF_FILE: nazz-layout-tb-r.conf

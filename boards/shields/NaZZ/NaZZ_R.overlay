@@ -1,7 +1,7 @@
 #include "NaZZ.dtsi"
 
 // 右手は列5〜9
-&transform_enc_enc { col-offset = <5>; };
-&transform_enc_tb  { col-offset = <5>; };
-&transform_tb_enc  { col-offset = <5>; };
-&transform_tb_tb   { col-offset = <5>; };
+&transform_full   { col-offset = <5>; };
+&transform_tb_r   { col-offset = <5>; };
+&transform_tb_l   { col-offset = <5>; };
+&transform_tb_lr  { col-offset = <5>; };

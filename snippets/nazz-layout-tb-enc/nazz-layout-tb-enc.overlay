@@ -1,7 +1,0 @@
-// 構成 tb-enc（左右とも同じ snippet を指定する）
-
-/ {
-    chosen {
-        zmk,physical-layout = &layout_tb_enc;
-    };
-};

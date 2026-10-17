@@ -1,8 +1,8 @@
-// 構成 enc-tb（左右とも同じ snippet を指定する）
+// 構成 tb-r（左右とも同じ snippet を指定する）
 
 / {
     chosen {
-        zmk,physical-layout = &layout_enc_tb;
+        zmk,physical-layout = &layout_tb_r;
     };
 };
 
